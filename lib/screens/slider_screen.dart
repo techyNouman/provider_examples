@@ -10,10 +10,8 @@ class SliderScreen extends StatefulWidget {
 }
 
 class _SliderScreenState extends State<SliderScreen> {
-
   @override
   Widget build(BuildContext context) {
-    // final provider = Provider.of<SliderProvider>(context);
     print("build");
     return Scaffold(
       appBar: AppBar(
@@ -22,7 +20,7 @@ class _SliderScreenState extends State<SliderScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Consumer<SliderProvider>(builder: (ctx, value, child){
+          Consumer<SliderProvider>(builder: (ctx, value, child) {
             return Slider(
                 min: 0,
                 max: 1,
@@ -31,30 +29,30 @@ class _SliderScreenState extends State<SliderScreen> {
                   value.setValue(val);
                 });
           }),
-          Consumer<SliderProvider>(builder: (ctx, value, child){
-            return  Row(
+          Consumer<SliderProvider>(builder: (ctx, value, child) {
+            return Row(
               children: [
                 Expanded(
                     child: Container(
-                      height: 100,
-                      decoration:
-                      BoxDecoration(color: Colors.green.withOpacity(value.value)),
-                      child: const Center(
-                        child: Text("Container 1"),
-                      ),
-                    )),
+                  height: 100,
+                  decoration: BoxDecoration(
+                      color: Colors.green.withOpacity(value.value)),
+                  child: const Center(
+                    child: Text("Container 1"),
+                  ),
+                )),
                 Expanded(
                     child: Container(
-                      height: 100,
-                      decoration: BoxDecoration(color: Colors.red.withOpacity(value.value)),
-                      child: const Center(
-                        child: Text("Container 2"),
-                      ),
-                    ))
+                  height: 100,
+                  decoration:
+                      BoxDecoration(color: Colors.red.withOpacity(value.value)),
+                  child: const Center(
+                    child: Text("Container 2"),
+                  ),
+                ))
               ],
             );
           }),
-
         ],
       ),
     );

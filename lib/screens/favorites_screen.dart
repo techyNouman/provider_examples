@@ -19,23 +19,26 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
       body: Column(
         children: [
           Expanded(
-            child: ListView.builder(itemCount: 100, itemBuilder: (ctx, index) {
-              return 
-                Consumer<FavoriteProvider>(builder: (ctx, value, child){
-                  return ListTile(
-                    onTap: (){
-                      if( value.selectedItem.contains(index)){
-                        value.removeItem(index);
-                      }else{
-                        value.addItem(index);
-                      }
-                    },
-                    title: Text("Item $index"),
-                    trailing: value.selectedItem.contains(index) ? const Icon(Icons.favorite) : const Icon(Icons.favorite_border_outlined),
-                  );
-                });
-
-            }),
+            child: ListView.builder(
+                itemCount: 100,
+                itemBuilder: (ctx, index) {
+                  return Consumer<FavoriteProvider>(
+                      builder: (ctx, value, child) {
+                    return ListTile(
+                      onTap: () {
+                        if (value.selectedItem.contains(index)) {
+                          value.removeItem(index);
+                        } else {
+                          value.addItem(index);
+                        }
+                      },
+                      title: Text("Item $index"),
+                      trailing: value.selectedItem.contains(index)
+                          ? const Icon(Icons.favorite)
+                          : const Icon(Icons.favorite_border_outlined),
+                    );
+                  });
+                }),
           )
         ],
       ),

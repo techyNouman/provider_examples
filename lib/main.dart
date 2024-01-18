@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:provider_count/provider/favorite_provider.dart';
 import 'package:provider_count/provider/slider_provider.dart';
 import 'package:provider_count/screens/favorites_screen.dart';
-import 'package:provider_count/screens/slider_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => FavoriteProvider())
       ],
         child: MaterialApp(
-          title: 'Provider Counter',
+          title: 'Provider Example',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,

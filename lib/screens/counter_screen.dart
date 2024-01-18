@@ -10,7 +10,6 @@ class CounterScreen extends StatefulWidget {
 }
 
 class _CounterScreenState extends State<CounterScreen> {
-
   var countProvider = CountProvider();
 
   @override
@@ -23,7 +22,7 @@ class _CounterScreenState extends State<CounterScreen> {
       ),
       body: Center(
           child: Consumer<CountProvider>(builder: (context, value, child) {
-            print("consumer build");
+        print("consumer build");
         return Text(
           value.count.toString(),
           style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
